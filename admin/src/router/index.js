@@ -10,50 +10,50 @@ import i18n from "@/i18n";
 Vue.use(VueRouter);
 
 const routes = [
-    {
-        path: "",
-        redirect: "login",
-        component: AuthLayout,
-        children: [
-            {
-                path: "/login",
-                name: "login",
-                component: Login,
-                meta: {
-                    title: i18n.t("routes.login"),
-                },
-            },
-            {
-                path: "/register",
-                name: "register",
-                component: Register,
-                meta: {
-                    title: i18n.t("routes.register"),
-                },
-            },
-            {
-                path: "/forgot-password",
-                name: "forgot_password",
-                component: ForgotPassword,
-                meta: {
-                    title: i18n.t("routes.forgot_password"),
-                },
-            },
-            {
-                path: "/reset-password/:token",
-                name: "reset_password",
-                component: ResetPassword,
-                props: true,
-                meta: {
-                    title: i18n.t("routes.reset_password"),
-                },
-            },
-        ],
-    },
+  {
+    path: "",
+    redirect: "login",
+    component: AuthLayout,
+    children: [
+      {
+        path: "/login",
+        name: "login",
+        component: Login,
+        meta: {
+          title: i18n.t("routes.login"),
+        },
+      },
+      {
+        path: "/register",
+        name: "register",
+        component: Register,
+        meta: {
+          title: i18n.t("routes.register"),
+        },
+      },
+      {
+        path: "/forgot-password",
+        name: "forgot_password",
+        component: ForgotPassword,
+        meta: {
+          title: i18n.t("routes.forgot_password"),
+        },
+      },
+      {
+        path: "/reset-password/:token",
+        name: "reset_password",
+        component: ResetPassword,
+        props: true,
+        meta: {
+          title: i18n.t("routes.reset_password"),
+        },
+      },
+    ],
+  },
 ];
 
 export default new VueRouter({
-    mode: "history",
-    base: process.env.BASE_URL,
-    routes,
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes,
 });

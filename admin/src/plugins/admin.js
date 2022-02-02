@@ -4,8 +4,8 @@ import VuetifyAdmin from "vuetify-admin";
 import "vuetify-admin/src/loader";
 
 import {
-    laravelDataProvider,
-    sanctumAuthProvider,
+  laravelDataProvider,
+  sanctumAuthProvider,
 } from "vuetify-admin/src/providers";
 import { en, fr } from "vuetify-admin/src/locales";
 
@@ -28,35 +28,35 @@ Vue.use(VuetifyAdmin);
 const baseURL = process.env.VUE_APP_API_URL || "http://localhost:8000";
 
 const http = axios.create({
-    baseURL,
-    withCredentials: true,
-    headers: { "X-Requested-With": "XMLHttpRequest" },
+  baseURL,
+  withCredentials: true,
+  headers: { "X-Requested-With": "XMLHttpRequest" },
 });
 
 /**
  * Init admin
  */
 export default new VuetifyAdmin({
-    router,
-    store,
-    i18n,
-    title: "Vuetify Admin",
-    routes,
-    locales: {
-        en,
-        fr,
+  router,
+  store,
+  i18n,
+  title: "Vuetify Admin",
+  routes,
+  locales: {
+    en,
+    fr,
+  },
+  translations: ["en", "fr"],
+  dataProvider: laravelDataProvider(http),
+  authProvider: sanctumAuthProvider(http),
+  resources,
+  http,
+  options: {
+    dateFormat: "long",
+    tinyMCE: {
+      language: navigator.language.replace("-", "_"),
+      imageUploadUrl: "/api/upload",
+      fileBrowserUrl: `${trimEnd(baseURL, "/")}/elfinder/tinymce5`,
     },
-    translations: ["en", "fr"],
-    dataProvider: laravelDataProvider(http),
-    authProvider: sanctumAuthProvider(http),
-    resources,
-    http,
-    options: {
-        dateFormat: "long",
-        tinyMCE: {
-            language: navigator.language.replace("-", "_"),
-            imageUploadUrl: "/api/upload",
-            fileBrowserUrl: `${trimEnd(baseURL, "/")}/elfinder/tinymce5`,
-        },
-    },
+  },
 });

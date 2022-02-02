@@ -11,34 +11,34 @@ import i18n from "@/i18n";
 Vue.component("Error", Error);
 
 export default {
-    path: "",
-    component: AdminLayout,
-    meta: {
-        title: i18n.t("routes.home"),
+  path: "",
+  component: AdminLayout,
+  meta: {
+    title: i18n.t("routes.home"),
+  },
+  children: [
+    {
+      path: "/dashboard",
+      name: "dashboard",
+      component: Dashboard,
+      meta: {
+        title: i18n.t("routes.dashboard"),
+      },
     },
-    children: [
-        {
-            path: "/dashboard",
-            name: "dashboard",
-            component: Dashboard,
-            meta: {
-                title: i18n.t("routes.dashboard"),
-            },
-        },
-        {
-            path: "/profile",
-            name: "profile",
-            component: Profile,
-            meta: {
-                title: i18n.t("routes.profile"),
-            },
-        },
-        {
-            path: "*",
-            component: Error,
-            meta: {
-                title: i18n.t("routes.not_found"),
-            },
-        },
-    ],
+    {
+      path: "/profile",
+      name: "profile",
+      component: Profile,
+      meta: {
+        title: i18n.t("routes.profile"),
+      },
+    },
+    {
+      path: "*",
+      component: Error,
+      meta: {
+        title: i18n.t("routes.not_found"),
+      },
+    },
+  ],
 };
