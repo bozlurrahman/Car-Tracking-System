@@ -1,3 +1,19 @@
+
+Open up Command Prompt(CMD) or Terminal in the project directory and run these commands:
+	composer install
+	php artisan admin:user admin@example.com # only if no already dummy users from your seeders
+	php artisan key:generate
+	php artisan migrate:fresh --seed
+	php artisan storage:link
+
+Launch API server
+	php artisan serve
+
+cd ./admin
+yarn install
+yarn serve
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

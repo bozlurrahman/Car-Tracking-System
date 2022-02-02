@@ -53,6 +53,12 @@ export default new VuetifyAdmin({
   http,
   options: {
     dateFormat: "long",
+    list: {
+      disableGlobalSearch: true,
+      disableItemsPerPage: true,
+      itemsPerPage: 30,
+      itemsPerPageOptions: [30],
+    },
     tinyMCE: {
       language: navigator.language.replace("-", "_"),
       imageUploadUrl: "/api/upload",

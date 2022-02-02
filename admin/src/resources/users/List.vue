@@ -13,13 +13,13 @@
           disable-edit-redirect
           @item-action="onAction"
         >
-          <template v-slot:[`item.actions`]="{ resource, item }">
+          <!-- <template v-slot:[`item.actions`]="{ resource, item }">
             <impersonate-button
               :resource="resource"
               :item="item"
               icon
             ></impersonate-button>
-          </template>
+          </template> -->
         </va-data-table>
       </va-list>
     </base-material-card>
@@ -27,12 +27,12 @@
 </template>
 
 <script>
-import ImpersonateButton from "@/components/buttons/ImpersonateButton";
+// import ImpersonateButton from "@/components/buttons/ImpersonateButton";
 
 export default {
-  components: {
-    ImpersonateButton,
-  },
+  // components: {
+  //   ImpersonateButton,
+  // },
   props: ["resource", "title"],
   data() {
     return {
