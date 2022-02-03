@@ -14,6 +14,8 @@ yarn install
 yarn serve
 
 
+php artisan crud:make Car --schema="category:string, title:string, description:json, summary:json, author:string, price:float, commentable:boolean,  publication_date:date" --translatable="description, summary" --searchable="title, description, author" --filterable="title, author, commentable" --sortable="isbn, title, author, price, publication_date" -mfs --force
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
