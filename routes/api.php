@@ -25,6 +25,6 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::apiResources([
         'users' => 'App\Http\Controllers\UserController',
         //
-        'cars' => 'App\Http\Controllers\{Car}Controller',
+        'cars' => 'App\Http\Controllers\CarController',
     ]);
 });

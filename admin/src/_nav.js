@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 export default (i18n, admin) => {
-  console.log('aaaadmin', admin)
+  console.log("aaaadmin", admin);
   return [
     {
       icon: "mdi-view-dashboard",
@@ -10,5 +10,6 @@ export default (i18n, admin) => {
     },
     { divider: true },
     admin.getResourceLink("users"),
-  ]
+    admin.getResourceLink("cars"),
+  ];
 };
