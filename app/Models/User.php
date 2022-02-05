@@ -18,9 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'name', 'email', 'password', 'active', 'roles',
     ];
 
     /**
@@ -39,6 +37,49 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        'active' => 'boolean',
         'email_verified_at' => 'datetime',
+        'roles' => 'array',
     ];
+
+
+    protected $appends = [
+        'impersonate',
+    ];
+
+    public function getImpersonateAttribute()
+    {
+        return session()->get('impersonate') === $this->id;
+    }
+
+    public function hasRole(...$roles)
+    {
+        return (bool) count(array_intersect($this->roles, $roles));
+    }
+
+    public function scopeRole(Builder $query, $role): Builder
+    {
+        return $query->where('roles', 'like', "%$role%");
+    }
+
+
+    // /**
+    //  * Get the identifier that will be stored in the subject claim of the JWT.
+    //  *
+    //  * @return mixed
+    //  */
+    // public function getJWTIdentifier()
+    // {
+    //     return $this->getKey();
+    // }
+
+    // /**
+    //  * Return a key value array, containing any custom claims to be added to the JWT.
+    //  *
+    //  * @return array
+    //  */
+    // public function getJWTCustomClaims()
+    // {
+    //     return [];
+    // }
 }

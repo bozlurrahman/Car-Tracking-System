@@ -40,7 +40,7 @@ export default new VuetifyAdmin({
   router,
   store,
   i18n,
-  title: "Vuetify Admin",
+  title: "Car Tracking System",
   routes,
   locales: {
     en,
@@ -65,4 +65,12 @@ export default new VuetifyAdmin({
       fileBrowserUrl: `${trimEnd(baseURL, "/")}/elfinder/tinymce5`,
     },
   },
+  canAction: ({ resource, action, can }) => {
+    console.log(action, resource)
+    if (can(["manager"])) {
+      return true;
+    }
+
+    // any other custom actions on given resource and action...
+  }, 
 });

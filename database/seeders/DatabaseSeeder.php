@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\CarSeeder;
 use Illuminate\Database\Seeder;
+use Database\Seeders\CarSeeder;
+use Database\Seeders\UserSeeder;
 
 // php artisan migrate:fresh --seed
 class DatabaseSeeder extends Seeder
@@ -15,10 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        
-        \App\Models\User::factory(10)->create();
         $this->call([
-            CarSeeder::class
+            CarSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
