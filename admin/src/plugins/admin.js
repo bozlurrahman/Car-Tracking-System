@@ -54,8 +54,8 @@ export default new VuetifyAdmin({
   options: {
     dateFormat: "long",
     list: {
-      disableGlobalSearch: true,
-      disableItemsPerPage: true,
+      // disableGlobalSearch: true,
+      // disableItemsPerPage: true,
       itemsPerPage: 30,
       itemsPerPageOptions: [30],
     },
@@ -65,12 +65,12 @@ export default new VuetifyAdmin({
       fileBrowserUrl: `${trimEnd(baseURL, "/")}/elfinder/tinymce5`,
     },
   },
-  canAction: ({ resource, action, can }) => {
-    console.log(action, resource)
-    if (can(["manager"])) {
-      return true;
-    }
+  // canAction: ({ resource, action, can }) => {
+  //   console.log(action, resource)
+  //   if (can(["manager"])) {
+  //     return true;
+  //   }
 
-    // any other custom actions on given resource and action...
-  }, 
+  //   // any other custom actions on given resource and action...
+  // }, 
 });

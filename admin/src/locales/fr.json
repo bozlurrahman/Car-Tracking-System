@@ -31,6 +31,8 @@
     "password": "Mot de passe",
     "name": "Nom",
     "email": "Email",
+    "active": "Active",
+    "roles": "Roles",
     "current_password": "Mot de passe courant",
     "password_confirmation": "Confirmation du mot de passe",
     "update": "Mettre à jour",
@@ -53,8 +55,17 @@
       "fields": {
         "name": "Nom",
         "email": "Email",
+        "active": "Active",
+        "roles": "Roles",
         "password": "Mot de passe",
         "password_confirmation": "Confirmation du Mot de passe"
+      },
+      "enums": {
+        "roles": {
+          "admin": "Admin",
+          "manager": "Manager",
+          "operator": "Operator"
+        }
       }
     }
   }

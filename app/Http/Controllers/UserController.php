@@ -12,7 +12,11 @@ use Spatie\QueryBuilder\QueryBuilder;
 use Okami101\LaravelAdmin\Filters\SearchFilter;
 
 class UserController extends Controller
-{
+{    
+    public function __construct()
+    {
+        // $this->authorizeResource(User::class);
+    }
     /**
      * Display a listing of the resource.
      *

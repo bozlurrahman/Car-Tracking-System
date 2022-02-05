@@ -31,6 +31,8 @@
     "password": "Password",
     "name": "Name",
     "email": "Email",
+    "active": "Active",
+    "roles": "Roles",
     "current_password": "Current password",
     "password_confirmation": "Password confirmation",
     "update": "Update",
@@ -53,8 +55,17 @@
       "fields": {
         "name": "Name",
         "email": "Email",
+        "active": "Active",
+        "roles": "Roles",
         "password": "Password",
         "password_confirmation": "Password confirmation"
+      },
+      "enums": {
+        "roles": {
+          "admin": "Admin",
+          "manager": "Manager",
+          "operator": "Operator"
+        }
       }
     },
     "cars": {
