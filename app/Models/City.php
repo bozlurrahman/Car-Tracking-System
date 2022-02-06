@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Okami101\LaravelAdmin\Traits\RequestMediaTrait;
 use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
+use Okami101\LaravelAdmin\Traits\RequestMediaTrait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class City extends Model implements HasMedia
 {
     use HasTranslations;
     use RequestMediaTrait;
+    use HasFactory;
 
     protected $fillable = ['name', 'active', 'description', 'user_id', 'car_id', 'tags'];
 
