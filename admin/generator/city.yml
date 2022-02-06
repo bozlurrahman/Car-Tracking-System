@@ -1,0 +1,115 @@
+resources:
+  cities:
+    name: City | Cities
+    icon: mdi-alien
+    label: name
+    actions:
+      - list
+      - show
+      - create
+      - edit
+      - delete
+    columns:
+      - name
+      - active
+      - created_at
+      - updated_at
+    sortable:
+      - name
+      - created_at
+      - updated_at
+    searchable:
+      - name
+      - description
+    filterable:
+      - name
+      - active
+    include:
+      - media
+    translatable:
+      - description
+    media:
+      - avatar
+      - images
+    fields:
+      name:
+        label: Name
+        form:
+          required: true
+      active:
+        label: Active
+        type: boolean
+        db:
+          type: boolean
+          options:
+            - default(0)
+      description:
+        label: Description
+        form:
+          multiline: true
+      operator:
+        label: Operator
+        type: reference
+        attributes:
+          reference: users
+        form:
+          type: autocomplete
+          required: true
+          model: user_id
+        filter:
+          multiple: true
+        db:
+          name: user_id
+          type: integer
+          options:
+            - unsigned
+            - foreign
+      car:
+        label: Car
+        type: reference
+        attributes:
+          reference: cars
+        form:
+          type: autocomplete
+          required: true
+          model: car_id
+        filter:
+          multiple: true
+        db:
+          name: car_id
+          type: integer
+          options:
+            - unsigned
+            - foreign
+      tags:
+        label: Tags
+        type: array
+        form:
+          type: autocomplete
+          multiple: true
+          taggable: true
+        db:
+          type: json
+      avatar:
+        label: Avatar
+        type: image
+        form:
+          type: file
+          preview: true
+        db: false
+      images:
+        label: Photos
+        type: image
+        form:
+          type: file
+          preview: true
+          multiple: true
+        db: false
+      created_at:
+        label: Creation date
+        type: date
+        form: false
+      updated_at:
+        label: Modification date
+        type: date
+        form: false
