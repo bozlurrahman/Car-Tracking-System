@@ -26,6 +26,7 @@ yarn crud:make cars --locale="en" --name="Car | Cars" --icon="mdi-car" --label="
 
 
 php artisan crud:yaml admin/generator/city.yml -mfs --force
+yarn crud:yaml generator/city.yml -mfs --force
 
 https://github.com/okami101/vuetify-admin/tree/master/examples/demo
 https://github.com/okami101/vuetify-admin/tree/master/examples/demo-laravel

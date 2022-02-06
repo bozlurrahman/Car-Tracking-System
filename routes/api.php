@@ -26,6 +26,6 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         'users' => 'App\Http\Controllers\UserController',
         //
         'cars' => 'App\Http\Controllers\CarController',
-        'cities' => 'App\Http\Controllers\{City}Controller',
+        'cities' => 'App\Http\Controllers\CityController',
     ]);
 });

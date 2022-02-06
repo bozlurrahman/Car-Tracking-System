@@ -16,4 +16,11 @@ export default [
       { name: "operator", actions: ["list", "show"] },
     ],
   },
+  {
+    name: 'cities',
+    icon: 'mdi-alien',
+    label: 'name',
+    translatable: true,
+    actions: undefined
+  }
 ];

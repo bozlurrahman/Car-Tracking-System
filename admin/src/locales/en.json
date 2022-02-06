@@ -72,6 +72,22 @@
       "name": "Car | Cars",
       "fields": {},
       "enums": {}
+    },
+    "cities": {
+      "name": "City | Cities",
+      "fields": {
+        "name": "Name",
+        "active": "Active",
+        "description": "Description",
+        "operator": "Operator",
+        "car": "Car",
+        "tags": "Tags",
+        "avatar": "Avatar",
+        "images": "Photos",
+        "created_at": "Creation date",
+        "updated_at": "Modification date"
+      },
+      "enums": {}
     }
   }
 }

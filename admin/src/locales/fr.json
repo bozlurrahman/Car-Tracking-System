@@ -67,6 +67,22 @@
           "operator": "Operator"
         }
       }
+    },
+    "cities": {
+      "name": "City | Cities",
+      "fields": {
+        "name": "Nom",
+        "active": "active",
+        "description": "la description",
+        "operator": "opérateur",
+        "car": "La Car",
+        "tags": "La Tags",
+        "avatar": "Avatar",
+        "images": "Photos",
+        "created_at": "Creation date",
+        "updated_at": "Modification date"
+      },
+      "enums": {}
     }
   }
 }

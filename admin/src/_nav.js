@@ -10,6 +10,6 @@ export default (i18n, admin) => {
     },
     { divider: true },
     admin.can(["manager"]) && admin.getResourceLink("users"),
-    admin.getResourceLink("cars"),
+    admin.getResourceLink("cars"),admin.getResourceLink("cities"),
   ];
 };
