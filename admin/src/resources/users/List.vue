@@ -5,8 +5,12 @@
       <users-form v-else :id="id" :item="item" @saved="onSaved"></users-form>
     </va-aside-layout>
     <base-material-card :icon="resource.icon" :title="title">
-      <va-list ref="list" :filters="filters" disable-create-redirect @action="onAction">
-
+      <va-list
+        ref="list"
+        :filters="filters"
+        disable-create-redirect
+        @action="onAction"
+      >
         <template v-slot:[`bulk.actions`]>
           <va-bulk-action-button
             :label="$t('users.enable')"

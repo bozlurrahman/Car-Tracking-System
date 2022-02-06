@@ -1,5 +1,11 @@
 <template>
-  <va-form :id="id" :item="item" disable-redirect @saved="$emit('saved')" v-model="model">
+  <va-form
+    :id="id"
+    :item="item"
+    disable-redirect
+    @saved="$emit('saved')"
+    v-model="model"
+  >
     <va-text-input source="name"></va-text-input>
     <va-text-input source="email" type="email"></va-text-input>
     <va-password-input source="password"></va-password-input>
@@ -15,7 +21,7 @@ export default {
   props: ["id", "item"],
   data() {
     return {
-      choices: ["manager","operator"],
+      choices: ["manager", "operator"],
       model: {
         active: true,
         roles: [],

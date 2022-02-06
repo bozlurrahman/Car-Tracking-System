@@ -72,5 +72,5 @@ export default new VuetifyAdmin({
   //   }
 
   //   // any other custom actions on given resource and action...
-  // }, 
+  // },
 });
