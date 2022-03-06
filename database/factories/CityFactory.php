@@ -18,7 +18,7 @@ class CityFactory extends Factory
         $faker = (new \Faker\Factory())::create();
         $this->faker->addProvider(new Fakecar($faker));
 
-        $users = User::pluck('id')->toArray();
+        $users = User::whereJsonContains('roles', ['operator'] )->pluck('id')->toArray();
         $cars = Car::pluck('id')->toArray();
 
         return [

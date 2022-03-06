@@ -13,7 +13,7 @@ class CarSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cars')->truncate();
+        // DB::table('cars')->truncate();
 
         \App\Models\Car::factory(50)->create();
 

@@ -13,7 +13,7 @@
             <va-boolean-input source="active"></va-boolean-input>
             <va-text-input source="description" multiline></va-text-input>
             <va-select-input
-              source="operator"
+              source="user_id"
               reference="users"
               required
               model="user_id"
@@ -23,7 +23,7 @@
             ></va-select-input>
 
             <va-select-input
-              source="car"
+              source="car_id"
               model="car_id"
               reference="cars"
               required
